@@ -2,9 +2,9 @@
 import threading
 from time import sleep
 import time
-from src.controllers.statusLcd import lcd 
-from src.controllers.sound import sound
-from src.controllers.singlethread import singlethread
+from src.sensors.statusLcd import lcd 
+from src.sensors.sound import sound
+from src.sensors.singlethread import singlethread
 
 # Creating the single thread
 singlethread = threading.Thread(target=singlethread, daemon=True)

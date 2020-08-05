@@ -2,7 +2,7 @@ import RPi.GPIO as GPIO
 import time
 import pyrebase
 from time import sleep
-from src.services.cloudMessaging import sendNotification
+from services.cloudMessaging import sendNotification
 
 
 config = {

@@ -1,6 +1,6 @@
-from src.controllers.motor import motor
-from src.controllers.fan import fan
-from src.controllers.play import music
+from sensors.motor import motor
+from sensors.fan import fan
+from sensors.play import music
 def singlethread():
     # While server is running
     while(True):

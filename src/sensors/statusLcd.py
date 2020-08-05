@@ -6,7 +6,7 @@ import sys
 import Adafruit_DHT
 import pyrebase
 from time import sleep
-from src.services.cloudMessaging import sendNotification
+from services.cloudMessaging import sendNotification
 
 config = {
   "apiKey": "AIzaSyDhinRkAu5k-3aL83EIe_thcTwhmu1fVvU",
