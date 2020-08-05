@@ -6,14 +6,14 @@ import sys
 import Adafruit_DHT
 import pyrebase
 from time import sleep
-from .cloudMessaging import sendNotification
+from src.services.cloudMessaging import sendNotification
 
 config = {
   "apiKey": "AIzaSyDhinRkAu5k-3aL83EIe_thcTwhmu1fVvU",
   "authDomain": "baby-156b1.firebaseapp.com",
   "databaseURL": "https://baby-156b1.firebaseio.com",
   "storageBucket": "baby-156b1.appspot.com",
-   "serviceAccount": "firebase.json"
+   "serviceAccount": "src/auth/firebase.json"
 }
 
 firebase = pyrebase.initialize_app(config)

@@ -2,7 +2,7 @@ import RPi.GPIO as GPIO
 import time
 import pyrebase
 from time import sleep
-from .cloudMessaging import sendNotification
+from src.services.cloudMessaging import sendNotification
 
 
 config = {
@@ -10,7 +10,7 @@ config = {
   "authDomain": "baby-156b1.firebaseapp.com",
   "databaseURL": "https://baby-156b1.firebaseio.com",
   "storageBucket": "baby-156b1.appspot.com",
-   "serviceAccount": "firebase.json"
+   "serviceAccount": "src/auth/firebase.json"
 }
 
 firebase = pyrebase.initialize_app(config)

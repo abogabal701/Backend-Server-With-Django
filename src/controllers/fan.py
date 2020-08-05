@@ -6,7 +6,7 @@ config = {
     "authDomain": "baby-156b1.firebaseapp.com",
     "databaseURL": "https://baby-156b1.firebaseio.com",
     "storageBucket": "baby-156b1.appspot.com",
-    "serviceAccount": "firebase.json"
+    "serviceAccount": "src/auth/firebase.json"
 }
 firebase = pyrebase.initialize_app(config)
 db = firebase.database()

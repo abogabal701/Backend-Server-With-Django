@@ -1,13 +1,11 @@
-from .motor import motor
-from .fan import fan
-from .play import music
+from src.controllers.motor import motor
+from src.controllers.fan import fan
+from src.controllers.play import music
 def singlethread():
     # While server is running
-    i = 0
     while(True):
         motor()
         fan()
         music()
     # Once server is closed    
-    GPIO.cleanup()        
-
+    # GPIO.cleanup()        

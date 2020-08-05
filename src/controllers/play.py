@@ -8,7 +8,7 @@ config = {
   "authDomain": "baby-156b1.firebaseapp.com",
   "databaseURL": "https://baby-156b1.firebaseio.com",
   "storageBucket": "baby-156b1.appspot.com",
-   "serviceAccount":  "firebase.json"
+   "serviceAccount":  "src/auth/firebase.json"
 }
 
 firebase = pyrebase.initialize_app(config)
@@ -18,7 +18,7 @@ pygame.mixer.init()
 s=pygame.mixer.music
 
 #play = db.child("play").get()
-musicPath = "/home/pi/Desktop/iot/mysite/"
+musicPath = "/home/pi/Desktop/iot/src/assets/music/"
 def music():
     song = db.child("Music/song").get()
     if (song.val()==1):
