@@ -60,16 +60,16 @@ def lcd():
             humidity = 0.0
             temperature = 0.0
         
-        # Retrieve Data from Sensors
-        if(humidity>37):
+        # Retrieve Data from Sensors  
+        if(humidity>70):
             sendNotification(
-            "لقد ارتفعت الرطوبة ف الغرفة",
-            f"{humidity}%  وصلت رطوبه في الغرفة إلى ",
+            "Your Baby needs to change Diaper",
+            f"{humidity}%  Humidity level has reached ",
             "https://imgur.com/vXKttHm.png")
         if(temperature>37):
             sendNotification(
-            "لقد ارتفعت درجة الحراره ف الغرفة",
-            f"{temperature}C وصلت درجة الحراره في الغرفة إلى ",
+            "Temperature is High",
+            f"{temperature}C Temperature degree has reached ",
             "https://imgur.com/MRm56x6.png")
             
         # Send some test
@@ -85,8 +85,8 @@ def lcd():
 
         data = {"Humidity": f"{humidity}",
            "Temperature": f"{temperature}"}
-
-        db.child("Status").set(data)
+        if(humidity<100):
+            db.child("Status").set(data)
         
 
 

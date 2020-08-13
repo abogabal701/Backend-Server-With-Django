@@ -1,6 +1,7 @@
 import pyrebase
 import RPi.GPIO as GPIO
 from time import sleep
+from gpiozero import LightSensor
 
 config = {
   "apiKey": "AIzaSyDhinRkAu5k-3aL83EIe_thcTwhmu1fVvU",
@@ -17,6 +18,8 @@ db = firebase.database()
 
 in1 = 17
 en1 = 27
+led = 18
+
 GPIO.setmode(GPIO.BCM)
 GPIO.setwarnings(False)
 
@@ -26,14 +29,15 @@ GPIO.setup(in1,GPIO.OUT)
 
 p1=GPIO.PWM(en1,1000)
 p1.start(50)
-
+ldr = LightSensor(led)
 
 def motor():
     control1 = db.child("Motor/run").get()
     level1 = db.child("Motor/level").get()
 
     if (control1.val()==0):
-        GPIO.output(in1, 0)
+        if (ldr.value < 0.5):
+            GPIO.output(in1, 0)
         
     elif (level1.val()==1):
         p1.ChangeDutyCycle(50)

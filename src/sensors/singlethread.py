@@ -8,4 +8,4 @@ def singlethread():
         fan()
         music()
     # Once server is closed    
-    # GPIO.cleanup()        
+    GPIO.cleanup()        

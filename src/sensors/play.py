@@ -18,21 +18,43 @@ pygame.mixer.init()
 s=pygame.mixer.music
 
 #play = db.child("play").get()
-musicPath = "/home/pi/Desktop/iot/src/assets/music/"
+musicPath = "/home/pi/Desktop/iot/mysite/"
 def music():
     song = db.child("Music/song").get()
     if (song.val()==1):
         s.load(musicPath +"1.mp3")
         s.play()
-        db.child("Music/song").set(5)
-        if (song.val()==5):
+        db.child("Music/song").set(7)
+        if (song.val()==7):
             pygame.mixer.music.get_busy()
     elif (song.val()==2):
         s.load(musicPath +"2.mp3")
         s.play()
-        db.child("Music/song").set(5)
-        if (song.val()==5):
+        db.child("Music/song").set(7)
+        if (song.val()==7):
             pygame.mixer.music.get_busy()
+
+    elif (song.val()==3):
+        s.load(musicPath +"2.mp3")
+        s.play()
+        db.child("Music/song").set(7)
+        if (song.val()==7):
+            pygame.mixer.music.get_busy()
+
+    elif (song.val()==4):
+        s.load(musicPath +"2.mp3")
+        s.play()
+        db.child("Music/song").set(7)
+        if (song.val()==7):
+            pygame.mixer.music.get_busy()
+            
+    elif (song.val()==5):
+        s.load(musicPath +"2.mp3")
+        s.play()
+        db.child("Music/song").set(7)
+        if (song.val()==7):
+            pygame.mixer.music.get_busy()
+   
     elif (song.val()==0):
         pygame.mixer.music.stop()
 
